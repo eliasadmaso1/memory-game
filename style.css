@@ -2,5 +2,56 @@
     display: flex;
     flex-wrap: wrap;
     height: 600px;
-    width: 800px;
+    width: 890px;
 }
+
+h3{
+    font-family: Chalkduster, fantasy;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    min-height: 100vh;
+}
+body{
+    margin: 0;
+    background:radial-gradient(#9d5900,#3d2200)
+}
+
+.page-title{
+    color: #ff6d00;
+    font-family: Chalkduster, fantasy;
+    font-weight: normal;
+    text-align: center;
+    font-size: 5rem;
+}
+
+.game-info{
+    color: #ffbb89;
+    font-family: Chalkduster, fantasy;
+    font-size: 3rem;
+}
+
+.game-container{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
+}
+
+.game-info-container{
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    margin: 15px;
+}
+
+
+

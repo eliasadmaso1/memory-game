@@ -2,53 +2,56 @@ document.addEventListener('DOMContentLoaded',()=>{
     const cardsArray = [
         {
             name:"lebron james",
-            img:"images/lebron.png"
+            img:"images/cardGame1.png"
         },
         {
             name:"lebron james",
-            img:"images/lebron.png"
+            img:"images/cardGame1.png"
         },  
         {
             name:"kevin durant",
-            img:"images/durant.png"
+            img:"images/cardGame2.png"
         },
         {
             name:"kevin durant",
-            img:"images/durant.png"
+            img:"images/cardGame2.png"
         },
         {
             name:"stefh curry",
-            img:"images/curry.png"
+            img:"images/cardGame3.png"
         },
         {
             name:"stefh curry",
-            img:"images/curry.png"
+            img:"images/cardGame3.png"
         },
         {
             name:"james harden",
-            img:"images/harden.png"
+            img:"images/cardGame4.png"
         },
         {
             name:"james harden",
-            img:"images/harden.png"
+            img:"images/cardGame4.png"
         },
         {
             name:"russel westbrooke",
-            img:"images/russel.png"
+            img:"images/cardGame5.png"
         },
         {
             name:"russel westbrooke",
-            img:"images/russel.png"
+            img:"images/cardGame5.png"
         },
         {
             name:"kyrie irving",
-            img:"images/irving.png"
+            img:"images/cardGame6.png"
         },
         {
             name:"kyrie irving",
-            img:"images/irving.png"
+            img:"images/cardGame6.png"
         }
     ]
+
+
+
 
     cardsArray.sort(()=> 0.5 - Math.random());
 
@@ -61,7 +64,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     function createBoard(){
         for(let i = 0 ; i < cardsArray.length ; i++){
             var card = document.createElement('img')
-            card.setAttribute('src','images/basketball.png')
+            card.setAttribute('src','images/gameCard.png')
             card.setAttribute('data-id',i)
             card.addEventListener('click',flipCard)
             grid.appendChild(card)
@@ -75,22 +78,23 @@ document.addEventListener('DOMContentLoaded',()=>{
         if(cardsChosen[0] === cardsChosen[1]){
             alert('you found match!')
             console.log(cards[0]);
-            cards[optionOneId].setAttribute('src','images/shaq.png')
-            cards[optionTwoId].setAttribute('src','images/shaq.png')
+            cards[optionOneId].setAttribute('src','images/winCard.png')
+            cards[optionTwoId].setAttribute('src','images/winCard.png')
             cardsWon.push(cardsChosen);
             console.log(cardsWon);
             
         }
         else{
-            cards[optionOneId].setAttribute('src','images/basketball.png')
-            cards[optionTwoId].setAttribute('src','images/basketball.png')
+            cards[optionOneId].setAttribute('src','images/gameCard.png')
+            cards[optionTwoId].setAttribute('src','images/gameCard.png')
             alert('sorry, try again')
         }
         cardsChosen = []
         cardsChosenId = []
         resultDisplay.textContent = cardsWon.length
         if(cardsWon.length == cardsArray.length/2){
-            resultDisplay.textContent = 'Congratlations! You found them all!'
+            timeLeft.textContent = ""
+            resultDisplay.textContent = 'Congratlations! You found them all!';
         }
     }
 
